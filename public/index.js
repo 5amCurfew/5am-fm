@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Init
     wavesurfer = WaveSurfer.create({
         container: document.querySelector('#waveform'),
-        waveColor: '#A8DBA8',
-        progressColor: '#3B8686'
+        waveColor: '#3F3F3F',
+        progressColor: '#9F9F9F',
+        cursorWidth: 2,
+        cursorColor: 'red',
+        barWidth: 3,
+        barRadius: 3,
+        barGap: 2
     });
 
     // Load audio from URL
@@ -77,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let container = document.querySelector('#equalizer');
         filters.forEach(function(filter) {
             let input = document.createElement('input');
+            input.classList.add('controller');
+
             Object.assign(input, {
                 type: 'range',
                 min: -40,
@@ -84,12 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 value: 0,
                 title: filter.frequency.value
             });
-            input.style.display = 'inline-block';
+
+            input.style.display = 'inline-flex';
             input.setAttribute('orient', 'vertical');
             wavesurfer.util.style(input, {
-                webkitAppearance: 'slider-vertical',
-                width: '50px',
-                height: '150px'
+                webkitAppearance: 'slider-vertical'
             });
             container.appendChild(input);
 
