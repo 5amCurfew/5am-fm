@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>5am FM</title>
 
-        <!-- Bootstrap -->
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5am FM</title>
 
-        <link rel="stylesheet" href="/css/style.css" />
-        <link rel="screenshot" itemprop="screenshot" href="https://katspaugh.github.io/wavesurfer.js/example/screenshot.png" />
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <!-- wavesurfer.js -->
-        <script src="https://unpkg.com/wavesurfer.js"></script>
-        <script src="index.js"></script>
-    </head>
+    <link rel="stylesheet" href="/css/style.css" />
 
-    <body itemscope itemtype="http://schema.org/WebApplication">
+    <!-- wavesurfer.js -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
+    <script src="waveSurf.js"></script>
 
-        <div class="container" style='border: 1px solid red'>
+</head>
 
-            <div class="play" style='border: 1px solid blue'>
-                <button class="btn btn-primary" data-action="play" style='border: 1px solid blue'>
-                    <i class="glyphicon glyphicon-play"></i>
-                    <i class="glyphicon glyphicon-pause"></i>
-                </button>
+<body>
+
+    <div class="container" style='border: 1px solid red'>
+
+        <div id="playPause" class="play" style='border: 1px solid blue'>
+            <button class="btn btn-primary" data-action="play" style='border: 1px solid blue'>
+                <i class="glyphicon glyphicon-play"></i>
+                <i class="glyphicon glyphicon-pause"></i>
+            </button>
+        </div>
+
+        <div id="waveform" class="wave" style='border: 1px solid blue'>
+            <div class="progress progress-striped active" id="progress-bar">
+                <div class="progress-bar progress-bar-info"></div>
             </div>
+            <!-- Here be the waveform -->
+        </div>
 
-            <div id="waveform" class="wave" style='border: 1px solid blue'>
-                <div class="progress progress-striped active" id="progress-bar">
-                    <div class="progress-bar progress-bar-info"></div>
-                </div>
-                <!-- Here be the waveform -->
-            </div>
+        <div class="details" style='border: 1px solid blue'></div>
 
-            <div class="details" style='border: 1px solid blue'></div>
-
-            <div class="EQ" style='border: 1px solid blue'>
-                <div id="equalizer" class="equalizer">
-                    <!-- Here be equalizer sliders -->
-                </div>
+        <div class="EQ" style='border: 1px solid blue'>
+            <div id="equalizer" class="equalizer">
+                <!-- Here be equalizer sliders -->
             </div>
         </div>
 
-    </body>
+        <div style='border: 1px solid blue'></div>
+
+        <div class='visual' style='border: 1px solid blue'></div>
+    </div>
+
+</body>
+
 </html>

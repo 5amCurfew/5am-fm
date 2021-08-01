@@ -4,7 +4,7 @@
 var wavesurfer;
 
 // Init & load audio file
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Init
     wavesurfer = WaveSurfer.create({
         container: document.querySelector('#waveform'),
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     wavesurfer.load(`${document.location.origin}/song`);
 
     // Equalizer
-    wavesurfer.on('ready', function() {
+    wavesurfer.on('ready', function () {
         let EQ = [
             {
                 f: 32,
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ];
 
         // Create filters
-        let filters = EQ.map(function(band) {
+        let filters = EQ.map(function (band) {
             let filter = wavesurfer.backend.ac.createBiquadFilter();
             filter.type = band.type;
             filter.gain.value = 0;
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Bind filters to vertical range sliders
         let container = document.querySelector('#equalizer');
-        filters.forEach(function(filter) {
+        filters.forEach(function (filter) {
             let input = document.createElement('input');
             input.classList.add('controller');
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             container.appendChild(input);
 
-            let onChange = function(e) {
+            let onChange = function (e) {
                 filter.gain.value = ~~e.target.value;
             };
 
@@ -111,27 +111,22 @@ document.addEventListener('DOMContentLoaded', function() {
         wavesurfer.filters = filters;
     });
 
-    // Log errors
-    wavesurfer.on('error', function(msg) {
-        console.log(msg);
-    });
-
     // Bind play/pause button
     document
         .querySelector('[data-action="play"]')
         .addEventListener('click', wavesurfer.playPause.bind(wavesurfer));
 
     // Progress bar
-    (function() {
+    (function () {
         const progressDiv = document.querySelector('#progress-bar');
         const progressBar = progressDiv.querySelector('.progress-bar');
 
-        let showProgress = function(percent) {
+        let showProgress = function (percent) {
             progressDiv.style.display = 'block';
             progressBar.style.width = percent + '%';
         };
 
-        let hideProgress = function() {
+        let hideProgress = function () {
             progressDiv.style.display = 'none';
         };
 

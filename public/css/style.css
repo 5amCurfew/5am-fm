@@ -3,23 +3,30 @@ body {
     padding: 5px;
 }
 
+.container::before{
+    display: none;
+}
+
 /* Customize container */
 .container {
     padding: 5px;
-    height: 700px;
-    width: 800px;
+    height: 600px;
+    width: 100%;
     display: grid; 
-    grid-template-columns: 0.5fr 1.5fr; 
-    grid-template-rows: 0.5fr 1.5fr; 
+    grid-template-columns: 0.5fr 1.3fr; 
+    grid-template-rows: 0.7fr 0.75fr 1fr; 
     gap: 5px 5px; 
     grid-template-areas: 
         "play wave"
-        "details EQ"; 
+        "details EQ"
+        "holder visual"; 
     }
     .play { grid-area: play; }
     .wave { grid-area: wave; }
     .details { grid-area: details; }
     .EQ { grid-area: EQ; }
+    .holder { grid-area: holder; }
+    .visual { grid-area: visual; }
 
 .play{
     display: flex;
@@ -30,6 +37,7 @@ body {
 .wave{
     padding: 0px;
     display: grid;
+    width: 100%;
 }
 
 #waveform{
@@ -37,7 +45,9 @@ body {
 }
 
 .controls .mark-controls {
-    display:inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .EQ{
@@ -57,4 +67,12 @@ body {
     background-color: #FFF;
     padding: 0px;
     margin: 0;
+}
+
+.visual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
 }
