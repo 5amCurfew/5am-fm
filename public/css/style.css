@@ -10,69 +10,24 @@ body {
 /* Customize container */
 .container {
     padding: 5px;
-    height: 600px;
-    width: 100%;
+    height: 400px;
+    max-width: 350px;
     display: grid; 
-    grid-template-columns: 0.5fr 1.3fr; 
-    grid-template-rows: 0.7fr 0.75fr 1fr; 
+    grid-template-rows: 0.5fr .8fr .25fr; 
     gap: 5px 5px; 
     grid-template-areas: 
-        "play wave"
-        "details EQ"
-        "holder visual"; 
+        "play"
+        "visual"
+        "details"; 
     }
     .play { grid-area: play; }
-    .wave { grid-area: wave; }
-    .details { grid-area: details; }
-    .EQ { grid-area: EQ; }
-    .holder { grid-area: holder; }
     .visual { grid-area: visual; }
+    .details { grid-area: details; }
 
-.play{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.wave{
-    padding: 0px;
+.audioContainer, .visualContainer, .detailsContainer{
     display: grid;
-    width: 100%;
-}
-
-#waveform{
-    padding: 5px;
-}
-
-.controls .mark-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.EQ{
-    align-items: center;
-}
-
-.equalizer{
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-top: 10px;
-}
-
-#progress-bar, .progress-bar {
-    z-index: 100;
-    background-color: #FFF;
-    padding: 0px;
-    margin: 0;
-}
-
-.visual{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-top: 10px;
+    max-width: 400px;
 }

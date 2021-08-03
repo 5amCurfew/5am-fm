@@ -10,43 +10,29 @@
 
     <link rel="stylesheet" href="/css/style.css" />
 
-    <!-- wavesurfer.js -->
-    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <!-- wave.js -->
     <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
-    <script src="waveSurf.js"></script>
 
 </head>
 
 <body>
 
+
     <div class="container" style='border: 1px solid red'>
 
-        <div id="playPause" class="play" style='border: 1px solid blue'>
-            <button class="btn btn-primary" data-action="play" style='border: 1px solid blue'>
-                <i class="glyphicon glyphicon-play"></i>
-                <i class="glyphicon glyphicon-pause"></i>
-            </button>
+        <div class="audioContainer" style='border: 1px solid blue'>
+            <audio controls id="mp3" src="http://localhost:8080/song"></audio>
         </div>
 
-        <div id="waveform" class="wave" style='border: 1px solid blue'>
-            <div class="progress progress-striped active" id="progress-bar">
-                <div class="progress-bar progress-bar-info"></div>
-            </div>
-            <!-- Here be the waveform -->
+        <div class='visualContainer' style='border: 1px solid blue'>
+            <canvas id="visualCanvas"></canvas>
         </div>
 
-        <div class="details" style='border: 1px solid blue'></div>
+        <div class="detailsContainer" style='border: 1px solid blue'></div>
 
-        <div class="EQ" style='border: 1px solid blue'>
-            <div id="equalizer" class="equalizer">
-                <!-- Here be equalizer sliders -->
-            </div>
-        </div>
-
-        <div style='border: 1px solid blue'></div>
-
-        <div class='visual' style='border: 1px solid blue'></div>
     </div>
+
+    <script src="waveVis.js"></script>
 
 </body>
 
