@@ -5,11 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>5am FM</title>
 
-    <!-- Bootstrap -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/41dcd705c5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="/css/tinyPlayer.css" rel="stylesheet" />
 
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- howler.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <!-- wave.js -->
     <script src="https://cdn.jsdelivr.net/gh/foobar404/wave.js/dist/bundle.iife.js"></script>
 
@@ -17,22 +21,20 @@
 
 <body>
 
+    <div class="container">
 
-    <div class="container" style='border: 1px solid red'>
+        <audio hidden id="mp3" src="http://localhost:8080/song"></audio>
 
-        <div class="audioContainer" style='border: 1px solid blue'>
-            <audio controls id="mp3" src="http://localhost:8080/song"></audio>
-        </div>
-
-        <div class='visualContainer' style='border: 1px solid blue'>
+        <div class='visualContainer'>
             <canvas id="visualCanvas"></canvas>
         </div>
 
-        <div class="detailsContainer" style='border: 1px solid blue'></div>
+        <audio hidden class="iru-tiny-player" id="player" src="http://localhost:8080/song" data-title="Kid Cudi<br>Tequila Shots"></audio>
 
     </div>
 
-    <script src="waveVis.js"></script>
+    <script src="/js/waveVis.js"></script>
+    <script src="/js/tinyPlayer.js"></script>
 
 </body>
 

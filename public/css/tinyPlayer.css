@@ -1,0 +1,82 @@
+/**
+ * tiny-player v.0.2.1
+ * irubataru.com
+ *
+ * Copyright (c) 2018-2020 Jonas Rylund Glesaaen
+ *
+ * MIT License
+ */
+
+.iru-tiny-player {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+}
+
+.iru-tiny-player .song-main-info {
+  margin: 5px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .iru-tiny-player .song-main-info {
+    font-size: 1rem;
+  }
+}
+
+.song-main-info {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+}
+
+.iru-tiny-player .icon {
+  margin-right: ex;
+  min-width: 1.5rem;
+  flex-basis: 1.5rem;
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.iru-tiny-player .icon:hover {
+  color: #18bfef;
+}
+
+@media screen and (max-width: 480px) {
+  .iru-tiny-player .icon {
+    margin-right: 0.25ex;
+    min-width: 1rem;
+    flex-basis: 1rem;
+  }
+}
+
+.iru-tiny-player .icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  .iru-tiny-player .song-main-info .icon.fa-stop {
+    margin-right: 0.5ex;
+  }
+}
+
+.iru-tiny-player .song-seek {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.iru-tiny-player .song-progress {
+  position: absolute;
+  background-color: #808080;
+  width: 0%;
+  height: 100%;
+}

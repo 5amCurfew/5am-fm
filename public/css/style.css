@@ -1,33 +1,44 @@
-/* Space out content a bit */
-body {
-    padding: 5px;
+* {
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
-.container::before{
-    display: none;
+/* Space out content a bit */
+body {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container::before {
+  display: none;
 }
 
 /* Customize container */
 .container {
-    padding: 5px;
-    height: 400px;
-    max-width: 350px;
-    display: grid; 
-    grid-template-rows: 0.5fr .8fr .25fr; 
-    gap: 5px 5px; 
-    grid-template-areas: 
-        "play"
-        "visual"
-        "details"; 
-    }
-    .play { grid-area: play; }
-    .visual { grid-area: visual; }
-    .details { grid-area: details; }
+  padding: 0px;
+  height: 300px;
+  max-width: 200px;
+  display: grid;
+  grid-template-rows: 1fr 0.075fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "play"
+    "visual";
+}
+.play {
+  grid-area: play;
+}
+.visual {
+  grid-area: visual;
+}
 
-.audioContainer, .visualContainer, .detailsContainer{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
+.audioContainer,
+.visualContainer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 200px;
+  border: 1px solid black;
 }
